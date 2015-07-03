@@ -1,0 +1,10 @@
+db:
+  image: postgres:9.3.9
+
+web:
+  build: .
+  command: bundle exec rails s
+  ports:
+    - "4000"
+  links:
+    - db
